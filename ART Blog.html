@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Art Quiz</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+            color: #333;
+        }
+
+        header, footer {
+            background-color: #444;
+            color: #fff;
+            text-align: center;
+            padding: 15px;
+        }
+
+        .start-container, .quiz-container {
+            text-align: center;
+            margin: 20px auto;
+            padding: 20px;
+            max-width: 600px;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .start-container p {
+            font-size: 18px;
+            margin: 10px 0;
+        }
+
+        button {
+            margin: 10px;
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+            border: none;
+            border-radius: 5px;
+            background-color: #007bff;
+            color: #fff;
+            transition: background-color 0.3s ease;
+        }
+
+        button:hover {
+            background-color: #0056b3;
+        }
+
+        .question {
+            margin-bottom: 20px;
+            padding: 10px;
+            border-bottom: 2px solid #ddd;
+        }
+
+        .question img {
+            width: 300px; 
+            height: 200px; 
+            object-fit: cover; 
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            margin: 0 auto;
+            display: block;
+        }
+
+        .answers {
+            text-align: left;
+            margin-top: 10px;
+        }
+
+        .answers label {
+            display: block;
+            margin: 5px 0;
+        }
+
+        #result {
+            margin-top: 20px;
+            font-size: 18px;
+            font-weight: bold;
+        }
+
+        #timer {
+            font-size: 20px;
+            font-weight: bold;
+            color: red;
+            margin-bottom: 20px;
+        }
+        #svgDiv {
+            margin: 0 auto;
+            width: 200px;
+            height: 200px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-top: 20px;
+        }
+
+        #svgDiv svg {
+            width: 100%;
+            height: 100%;
+            }
+    </style>
+    <script src="jquery-3.7.1.min.js"></script>
+    <script src="JS.js"></script>
+</head>
+<body>
+    <header>
+        <h1>Art Quiz</h1>
+    </header>
+
+    <div class="start-container">
+        <div id="svgDiv">
+            <svg width="500" height="500" xmlns="http://www.w3.org/2000/svg" version="1.1" viewBox="0 0 800 800">
+                <circle class="st0" cx="400" cy="400" r="100" fill="#FF0000">
+                    <animate
+                        attributeName="cy"
+                        values="400; 380; 400"
+                        dur="1s"
+                        repeatCount="indefinite"
+                    />
+                </circle>
+                <image href="logoo.svg" x="150" y="150" width="500" height="500" alt="SVG Logo" />
+            </svg>
+        </div>
+        <p>Welcome!</p>
+        <p>Test your knowledge of art with our exciting quiz.</p>
+        <button id="startQuiz">Start Quiz</button>
+    </div>
+
+    <div class="container quiz-container">
+        <section class="question">
+            <h2>Question 1</h2>
+            <img src="image/impressionist-header.jpg" alt="Impressionist painting">
+            <p>Who is the artist of the painting shown above?</p>
+            <div class="answers">
+                <label><input type="radio" name="q1" value="Claude Monet"> Claude Monet</label>
+                <label><input type="radio" name="q1" value="Van Gogh"> Vincent van Gogh</label>
+                <label><input type="radio" name="q1" value="Picasso"> Pablo Picasso</label>
+            </div>
+        </section>
+
+        <section class="question">
+            <h2>Question 2</h2>
+            <img src="image/Monet-Camille.jpg" alt="Claude Monet painting">
+            <p>What is the name of this painting?</p>
+            <div class="answers">
+                <label><input type="radio" name="q2" value="Camille Monet"> Camille Monet</label>
+                <label><input type="radio" name="q2" value="Woman with a Parasol"> Woman with a Parasol</label>
+                <label><input type="radio" name="q2" value="Water Lilies"> Water Lilies</label>
+            </div>
+        </section>
+
+        <section class="question">
+            <h2>Question 3</h2>
+            <img src="image/download.jpeg" alt="Starry Night painting">
+            <p>What is the title of this painting by Vincent van Gogh?</p>
+            <div class="answers">
+                <label><input type="radio" name="q3" value="Starry Night"> Starry Night</label>
+                <label><input type="radio" name="q3" value="Sunflowers"> Sunflowers</label>
+                <label><input type="radio" name="q3" value="Irises"> Irises</label>
+            </div>
+        </section>
+
+        <section class="question">
+            <h2>Question 4</h2>
+            <img src="image/images.jpeg" alt="The Persistence of Memory painting">
+            <p>Who is the artist of the painting shown above?</p>
+            <div class="answers">
+                <label><input type="radio" name="q4" value="Salvador Dalí"> Salvador Dalí</label>
+                <label><input type="radio" name="q4" value="Dali"> Salvador Dalí</label>
+                <label><input type="radio" name="q4" value="Van Gogh"> Vincent van Gogh</label>
+            </div>
+        </section>
+
+        <section class="question">
+            <h2>Question 5</h2>
+            <img src="image/mona lisa.jpg" alt="Mona Lisa painting">
+            <p>What is the name of this painting?</p>
+            <div class="answers">
+                <label><input type="radio" name="q5" value="Mona Lisa"> Mona Lisa</label>
+                <label><input type="radio" name="q5" value="The Last Supper"> The Last Supper</label>
+                <label><input type="radio" name="q5" value="The Birth of Venus"> The Birth of Venus</label>
+            </div>
+        </section>
+
+        <section class="question">
+            <h2>Question 6</h2>
+            <img src="image/britma.jpg" alt="The Scream painting">
+            <p>Who painted "The Scream"?</p>
+            <div class="answers">
+                <label><input type="radio" name="q6" value="Edvard Munch"> Edvard Munch</label>
+                <label><input type="radio" name="q6" value="Monet"> Claude Monet</label>
+                <label><input type="radio" name="q6" value="Picasso"> Pablo Picasso</label>
+            </div>
+        </section>
+
+        <section class="question">
+            <h2>Question 7</h2>
+            <img src="image/_Girl_with_a_Pearl_Earring.jpg" alt="Girl with a Pearl Earring painting">
+            <p>Who is the artist of "Girl with a Pearl Earring"?</p>
+            <div class="answers">
+                <label><input type="radio" name="q7" value="Johannes Vermeer"> Johannes Vermeer</label>
+                <label><input type="radio" name="q7" value="Rembrandt"> Rembrandt</label>
+                <label><input type="radio" name="q7" value="Van Gogh"> Vincent van Gogh</label>
+            </div>
+        </section>
+
+        <section class="question">
+            <h2>Question 8</h2>
+            <img src="image/las supper.jpg" alt="The Last Supper painting">
+            <p>What is the name of this painting by Leonardo da Vinci?</p>
+            <div class="answers">
+                <label><input type="radio" name="q8" value="The Last Supper"> The Last Supper</label>
+                <label><input type="radio" name="q8" value="Mona Lisa"> Mona Lisa</label>
+                <label><input type="radio" name="q8" value="Vitruvian Man"> Vitruvian Man</label>
+            </div>
+        </section>
+
+        <section class="question">
+            <h2>Question 9</h2>
+            <img src="image/download (1).jpeg" alt="The Birth of Venus painting">
+            <p>Who painted "The Birth of Venus"?</p>
+            <div class="answers">
+                <label><input type="radio" name="q9" value="Sandro Botticelli"> Sandro Botticelli</label>
+                <label><input type="radio" name="q9" value="Raphael"> Raphael</label>
+                <label><input type="radio" name="q9" value="Titian"> Titian</label>
+            </div>
+        </section>
+
+        <section class="question">
+            <h2>Question 10</h2>
+            <img src="image/images (2).jpeg" alt="Guernica painting">
+            <p>Which artist created "Guernica"?</p>
+            <div class="answers">
+                <label><input type="radio" name="q10" value="Pablo Picasso"> Pablo Picasso</label>
+                <label><input type="radio" name="q10" value="Goya"> Francisco Goya</label>
+                <label><input type="radio" name="q10" value="Kandinsky"> Wassily Kandinsky</label>
+            </div>
+        </section>
+
+        <button id="submitQuiz">Submit</button>
+        <button id="retryQuiz" style="display: none;">Retry Quiz</button>
+        <div id="result"></div>
+    </div>
+    <div id="timer">Time left: 05:00</div>
+
+    <footer>
+        <p>&copy; 2024 Art Quiz.</p>
+    </footer>
+</body>
+</html>

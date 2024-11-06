@@ -1,0 +1,147 @@
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    color: #333;
+    background-color: #f4f4f4;
+}
+
+header, footer {
+    background-color: #333;
+    color: #fff;
+    padding: 15px 0;
+}
+
+header h1, footer p {
+    margin: 0;
+    padding: 0;
+}
+
+.container, .start-container {
+    display: none;
+    margin: 20px auto;
+    padding: 20px;
+    max-width: 800px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.start-container {
+    display: block;
+    text-align: center;
+}
+
+.start-container p {
+    font-size: 1.2em;
+    margin-bottom: 20px;
+}
+
+#startQuiz {
+    padding: 12px 24px;
+    font-size: 1.2em;
+    border: none;
+    border-radius: 5px;
+    background-color: #4CAF50;
+    color: white;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+#startQuiz:hover {
+    background-color: #45a049;
+}
+
+.question {
+    margin-bottom: 20px;
+}
+
+.question img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+}
+
+.question h2 {
+    font-size: 1.5em;
+    margin-bottom: 10px;
+}
+
+.answers label {
+    display: block;
+    margin-bottom: 10px;
+    font-size: 1.1em;
+}
+
+#submitQuiz {
+    padding: 12px 24px;
+    font-size: 1.2em;
+    border: none;
+    border-radius: 5px;
+    background-color: #007BFF;
+    color: white;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+#submitQuiz:hover {
+    background-color: #0056b3;
+}
+
+#result {
+    margin-top: 20px;
+    font-size: 1.2em;
+}
+
+
+
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background: #f4f4f4;
+}
+header, footer {
+    background: #313140;
+    color: white;
+    text-align: center;
+    padding: 10px 0;
+}
+.container {
+    max-width: 900px;
+    margin: 20px auto;
+    padding: 20px;
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+h1 {
+    margin: 0 0 20px;
+}
+.question {
+    margin-bottom: 20px;
+}
+.question img {
+    max-width: 100%;
+    height: auto;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    margin-bottom: 10px;
+}
+.answers {
+    margin-bottom: 20px;
+}
+.answers label {
+    display: block;
+    margin-bottom: 10px;
+}
+footer p {
+    margin: 0;
+}
+#result {
+    font-weight: bold;
+    font-size: 1.2em;
+    margin-top: 20px;
+    text-align: center;
+}
